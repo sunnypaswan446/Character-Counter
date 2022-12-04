@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Calculator</title>
+
+    <style>
+        body{
+            padding:50px 30px;
+            text-align: center;
+        }
+        .container{
+            border-radius: 20px;
+            overflow: hidden;
+            width:80%;
+            margin:auto;
+        }
+        h2{
+            background-color:rgb(255, 157, 28);
+            font-weight: bold;
+            padding: 15px;
+            margin:0px;
+            color:aliceblue;
+        }
+        textarea{
+            font: 88px;
+            padding: 15px;
+            width: 96%;
+            border-color: rgb(255, 157, 28);
+            outline: none;
+        }
+        p{
+            color:whitesmoke;
+            background-color: rgb(255, 157, 28);
+            margin: 0;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container" id="containers">
+        <h2>Word Calculator</h2>
+        <textarea id="textarea" rows="10"></textarea>
+        <p><span id="word">0</span> Words 
+        <span id="char">0</span> Characters</p>
+    </div>
+    <script>
+        let textarea=document.getElementById('textarea')
+        let word=document.getElementById("word")
+        let char=document.getElementById('char')
+        
+        textarea.addEventListener('input', function(){
+            let text=this.value;
+            char.innerText=text.length;
+            
+
+           let words=text.split(" ");
+           word.innerText=words.length
+            
+        })
+    </script>
+</body>
+</html>
